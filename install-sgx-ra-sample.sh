@@ -17,7 +17,7 @@ git checkout 86305123d416053e95e66cbaf4b5476e33920186
 make -j 6
 
 cd $BASE_DIR
-wget https://certificates.trustedservices.intel.com/Intel_SGX_Attestation_RootCA.pem
+[[ -e Intel_SGX_Attestation_RootCA.pem ]] || wget https://certificates.trustedservices.intel.com/Intel_SGX_Attestation_RootCA.pem
 sed -i -e "s|IAS_REPORT_SIGNING_CA_FILE=|IAS_REPORT_SIGNING_CA_FILE=$BASE_DIR/Intel_SGX_Attestation_RootCA.pem|g" $BASE_DIR/sgx-ra-sample/settings
 
 echo ""
