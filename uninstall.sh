@@ -4,6 +4,11 @@ set -e
 
 BASE_DIR=/opt/intel
 
+if [[ -d $BASE_DIR/sgx-ra-sample ]]; then
+	sudo rm -rf $BASE_DIR/sgx-ra-sample
+	sudo rm $BASE_DIR/Intel_SGX_Attestation_RootCA.pem
+fi
+
 [[ -d $BASE_DIR/libsgx-enclave-common/ ]] && sudo $BASE_DIR/libsgx-enclave-common/cleanup.sh
 if [[ -d $BASE_DIR/sgxdriver/ ]]; then
        	sudo $BASE_DIR/sgxdriver/uninstall.sh
