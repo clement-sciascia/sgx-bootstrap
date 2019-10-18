@@ -5,7 +5,7 @@ set -e
 sudo apt-get install -y build-essential ocaml ocamlbuild automake autoconf libtool wget python libssl-dev libcurl4-openssl-dev protobuf-compiler libprotobuf-dev debhelper cmake
 
 : "${BASE_DIR:=/opt/intel}"
-: "${VERSION:=${VERSION}}"
+: "${VERSION:=2.6}"
 
 [[ -d $BASE_DIR ]] || sudo mkdir -p $BASE_DIR && sudo chown `whoami` $BASE_DIR
 
