@@ -6,7 +6,7 @@ sudo apt-get install -y build-essential ocaml ocamlbuild automake autoconf libto
 
 BASE_DIR=/opt/intel
 
-[[ -d $BASE_DIR ]] || sudo mkdir -p $BASE_DIR && sudo chown sgx:sgx $BASE_DIR
+[[ -d $BASE_DIR ]] || sudo mkdir -p $BASE_DIR && sudo chown `whoami` $BASE_DIR
 
 cd $BASE_DIR
 git clone https://github.com/intel/linux-sgx.git
